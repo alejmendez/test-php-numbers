@@ -6,6 +6,7 @@ class Numbers
 {
     protected $list = [];
     protected $messages = [
+        0 => 1,
         3 => 'home',
         5 => 'IT',
         8 => 'Integraciones',
@@ -30,9 +31,9 @@ class Numbers
     public function getIndexMessage($number)
     {
         $index = 0;
-        foreach ($this->numbersToEvaluate as $multiple) {
-            if ($number % $multiple === 0) {
-                $index += $multiple;
+        foreach ($this->numbersToEvaluate as $multiplier) {
+            if ($number % $multiplier === 0) {
+                $index += $multiplier;
             }
         }
         return $index;
