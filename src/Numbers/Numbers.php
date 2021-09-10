@@ -15,6 +15,11 @@ class Numbers
 
     public function __construct($first, $last)
     {
+        $this->initNumbers($first, $last);
+    }
+
+    public function initNumbers($first, $last)
+    {
         for ($i = $first; $i <= $last; $i++) {
             $number = $this->getNumber($i);
             $this->list[] = $number;
