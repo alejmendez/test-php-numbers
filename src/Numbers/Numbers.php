@@ -10,20 +10,32 @@ class Numbers
         5 => 'IT',
         8 => 'Integraciones',
     ];
+    protected $numbersToEvaluate = [3, 5];
+
     public function __construct($first, $last)
     {
         for ($i = $first; $i <= $last; $i++) {
-            $index = 0;
-            $this->messages[0] = $i;
-            foreach ([3, 5] as $multiple) {
-                if (0 == $i % $multiple) {
-                    $index += $multiple;
-                }
-            }
-
-            $number = $this->messages[$index];
+            $number = $this->getNumber($i);
             $this->list[] = $number;
         }
+    }
+
+    public function getNumber($number)
+    {
+        $this->messages[0] = $number;
+        $index = $this->getIndexMessage($number);
+        return $this->messages[$index];
+    }
+
+    public function getIndexMessage($number)
+    {
+        $index = 0;
+        foreach ($this->numbersToEvaluate as $multiple) {
+            if ($number % $multiple === 0) {
+                $index += $multiple;
+            }
+        }
+        return $index;
     }
 
     public function getList()
@@ -33,11 +45,7 @@ class Numbers
 
     public function toString()
     {
-        $result = '';
-        for ($i = 0, $count = count($this->getList()); $i < $count; $i++) {
-            $result .= $this->list[$i] . "\n";
-        }
-        return $result;
+        return implode("\n", $this->getList()) . "\n";
     }
 
     public function print()
