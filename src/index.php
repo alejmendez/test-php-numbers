@@ -3,4 +3,5 @@ require_once '../vendor/autoload.php';
 
 use app\Numbers\Numbers;
 
-echo Numbers::sayHelloWorld();
+$appNumbers = new Numbers(1, 100);
+$appNumbers->print();
