@@ -1,0 +1,1 @@
+{"version":1,"defects":{"test\\NumbersTest::it_can_set_and_return_value":5},"times":{"test\\NumbersTest::displays_hello_world_message":0.003,"test\\NumbersTest::it_can_set_and_return_value":0.003}}

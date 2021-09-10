@@ -1,0 +1,18 @@
+{
+    "name": "alejm/php",
+    "authors": [
+        {
+            "name": "Alejandro Méndez",
+            "email": "alejmendez.87@gmail.com"
+        }
+    ],
+    "autoload": {
+        "psr-4": {
+            "app\\": "src/"
+        }
+    },
+    "require": {},
+    "require-dev": {
+        "phpunit/phpunit": "^9"
+    }
+}
